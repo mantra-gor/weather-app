@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App | Mantra Gor</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/011b5473ab.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="wrapper">
+            <h1>Weather App</h1>
+            <div class="tab-container">
+                <p class="tab" data-userWeather>Your Weather</p>
+                <p class="tab" data-searchWeather>Search Weather</p>
+            </div>
+            <div class="weather-container">
+
+                <!-- Grant Location container -->
+                <div class="grant-location-container">
+                    <img src="./assets/location.png" alt="location pin" width="80" loading="lazy">
+                    <h2>Grant Location Access</h2>
+                    <p>Allow Access to get Weather Information</p>
+                    <button class="grant-access-btn" data-grantAccess>Grant Access</button>
+                </div>
+
+                <!-- Search Weather Form -->
+                <form class="form-container" id="search" data-searchForm>
+                    <input class="search-box" type="text" placeholder="Search for City..." data-searchInput>
+                    <button class="search-btn fa-solid fa-magnifying-glass"></button>
+                </form>
+
+                <!-- Loading Screen Container -->
+                <div class="loading-container">
+                    <img src="./assets/Infinity-loader.svg" alt="loading">
+                    <p>Loading</p>
+                </div>
+
+                <!-- Show Weather Info -->
+                <div class="user-info-container">
+                    <!-- city name and flag -->
+                    <div class="city-name">
+                        <p data-cityName></p>
+                        <img data-countryIcon alt="country flag">
+                    </div>
+
+                    <div class="disp">
+                        <!-- weather icon -->
+                        <img data-weatherIcon class="weather-icon" alt="weather icon">
+
+                        <div class="right-side-disp">
+                            <!-- temperature -->
+                            <h3 data-temp></h3>
+
+                            <!-- weather description -->
+                            <p data-weatherDesc class="weather-desc"></p>
+                        </div>
+                    </div>
+
+                    <!-- 3 Cards Parameters -->
+                    <div class="parameters-container">
+
+                        <!-- Card 1 -->
+                        <div class="parameter">
+                            <i class="fa-solid fa-wind"></i>
+                            <div>
+                                <p>windspeed</p>
+                                <p class="parameter-data" data-windspeed></p>
+                            </div>
+                        </div>
+
+
+                        <!-- Card 2 -->
+                        <div class="parameter">
+                            <i class="fa-sharp fa-solid fa-droplet"></i>
+                            <div>
+                                <p>humidity</p>
+                                <p class="parameter-data" data-humidity></p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="parameter">
+                            <i class="fa-solid fa-cloud"></i>
+                            <div>
+                                <p>clouds</p>
+                                <p class="parameter-data" data-cloudiness></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- handle api fetch error -->
+                <div class="page-not-found">
+                    <img src="./assets/404-not-found.png" alt="404 Error Not Found" width="90%">
+                    <p>City Not Found</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./config.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
